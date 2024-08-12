@@ -1,0 +1,86 @@
+@font-face {
+    font-family: clock-font;
+    src: url('./assests/fonts/e1234/E1234.ttf');
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --start-btn-bg:rgb(11, 163, 11);
+    --clear-btn-bg:rgb(228, 64, 64);
+    --stop-btn-bg:rgb(179, 84, 29);
+    --start-btn-box-shadow:rgba(11,163,11,0.3);
+    --clear-btn-box-shadow:rgba(228, 64, 64,0.3);
+    --stop-btn-box-shadow:rgba(179, 84, 29,0.3);
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background:url('./assests/bg.jpg');
+}
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 450px;
+    height: 250px;
+    background-color: #323232;
+    box-shadow: 5px 5px rgba(50, 50, 50,0.3);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+
+}
+.container .time{
+    text-align: center;
+    color: #0fd319;
+    font-family: 'clock-font';
+    font-size: 48px;
+    font-weight: bold;
+}
+.container .commands{
+    display: flex;
+    gap: 20px;
+}
+.container .commands .start-btn,.container .commands .clear-btn,.container .commands .stop-btn{
+    width: 132px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 8px;
+    border: none;
+    background: var(--start-btn-bg);
+    color: white;
+    cursor: pointer;
+    box-shadow: inset 3px 2px rgba(255,255,255,0.2),
+    3px 3px var(--start-btn-box-shadow);
+    transition: .2s all ;
+    transform: translate(0,0);
+}
+.container .commands .start-btn:active,.container .commands .clear-btn:active,.container .commands .stop-btn:active{
+    box-shadow: inset 0 0 rgba(255,255,255,0.2),
+    0 0 rgba(11,163,11,0.3);
+    transform: translate(3px , 2px);
+}
+.container .commands .clear-btn {
+    background-color:var(--clear-btn-bg) ;
+    box-shadow: inset 3px 2px rgba(255,255,255,0.2),
+    3px 3px var(--clear-btn-box-shadow);
+}
+.container .commands .stop-btn {
+    background-color:var(--stop-btn-bg) ;
+    box-shadow: inset 3px 2px rgba(255,255,255,0.2),
+    3px 3px var(--stop-btn-box-shadow);
+}
+@media screen and (max-width:470px) {
+    .container{
+        width: 100%;
+        border-radius: 0;
+    }
+    
+}
